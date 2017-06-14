@@ -6,6 +6,7 @@ import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import okhttp3.OkHttpClient;
 
 /**
@@ -17,6 +18,8 @@ public class APP extends Application {
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
+
+
         Stetho.initializeWithDefaults(this);
 
         new OkHttpClient.Builder()

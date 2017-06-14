@@ -20,7 +20,7 @@ public interface API {
     @POST("register-user.php")
     Call<MainResponse> registerUser(@Body User user);
 
-    @POST("send_notification.php")
+    @POST("notification_result.php")
     Call<MainResponse> sendResponse(@Body NotificationResponse response);
 
 }

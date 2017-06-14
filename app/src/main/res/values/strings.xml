@@ -22,4 +22,7 @@
     <string name="enter_password_again">Please Enter Password Again!</string>
     <string name="password_isnt_equal">Password isn\'t same !</string>
     <string name="blood_type">Blood type</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

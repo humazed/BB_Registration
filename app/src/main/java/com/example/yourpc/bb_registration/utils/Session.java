@@ -33,31 +33,24 @@ public class Session {
     }
 
     public void loginUser(final User user) {
-
         if (realm.where(User.class).findFirst() == null) {
 
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-                    realm.copyToRealm(user);
-                }
-            });
+            realm.executeTransaction(realm1 -> realm1.copyToRealm(user));
 
         } else {
             logout();
             loginUser(user);
         }
-
-
     }
 
+    public String getUserId() {
+        return realm.where(User.class).findFirst().id;
+    }
+
+
+
     public void logout() {
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                realm.delete(User.class);
-            }
-        });
+        realm.executeTransaction(realm1 -> realm1.delete(User.class));
     }
 
     public boolean isUserLoggedIn() {

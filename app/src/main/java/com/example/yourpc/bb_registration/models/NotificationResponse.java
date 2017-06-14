@@ -8,7 +8,8 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class NotificationResponse {
-    //1 accept - 2 reject
+    @SerializedName("id")
+    public String id;
     @SerializedName("response")
-    public int response;
+    public String response;
 }
