@@ -24,4 +24,3 @@ public interface API {
     Call<MainResponse> sendResponse(@Body NotificationResponse response);
 
 }
-
