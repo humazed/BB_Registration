@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "445008047914",
+    "firebase_url": "https://top-decoder-690.firebaseio.com",
+    "project_id": "top-decoder-690",
+    "storage_bucket": "top-decoder-690.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445008047914:android:b12cfcce51b52abb",
+        "android_client_info": {
+          "package_name": "com.tyyar.bloodbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445008047914-v6efhn9ls6caf1gf7duc6njfb99ciceq.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "445008047914-fnfut58hsoko1739gbolkevmamgkivmm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tyyar.bloodbank",
+            "certificate_hash": "63a9f033df7113c9f5590bd674fd532f02547f9b"
+          }
+        },
+        {
+          "client_id": "445008047914-69c0fbpuli89umossc1qdbhrcmnvtped.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpy8zdt5IFXCIUMK9XzlM3OIzlj0NLDF8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445008047914-v6efhn9ls6caf1gf7duc6njfb99ciceq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445008047914:android:cffdc5f8e4b38723",
+        "android_client_info": {
+          "package_name": "com.example.yourpc.bb_registration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445008047914-nkelo56mar0q3lsu9q048kj9ui1fr5k2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yourpc.bb_registration",
+            "certificate_hash": "63a9f033df7113c9f5590bd674fd532f02547f9b"
+          }
+        },
+        {
+          "client_id": "445008047914-v6efhn9ls6caf1gf7duc6njfb99ciceq.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "445008047914-69c0fbpuli89umossc1qdbhrcmnvtped.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpy8zdt5IFXCIUMK9XzlM3OIzlj0NLDF8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445008047914-v6efhn9ls6caf1gf7duc6njfb99ciceq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
