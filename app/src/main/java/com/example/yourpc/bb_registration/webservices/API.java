@@ -9,10 +9,6 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
-/**
- * hendiware on 2016/12 .
- */
-
 public interface API {
     @POST("login-user.php")
     Call<MainResponse> loginUser(@Body User user);
@@ -22,5 +18,4 @@ public interface API {
 
     @POST("notification_result.php")
     Call<MainResponse> sendResponse(@Body NotificationResponse response);
-
 }

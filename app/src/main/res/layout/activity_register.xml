@@ -102,7 +102,6 @@
                 android:drawableStart="@drawable/ic_lock_white_24dp"
                 android:hint="@string/user_password"
                 android:inputType="textPassword"
-                android:text="pass"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhiteOverlay"
                 android:textSize="16sp"/>
@@ -116,7 +115,6 @@
                 android:drawableStart="@drawable/ic_lock_white_24dp"
                 android:hint="@string/repeat_password"
                 android:inputType="textPassword"
-                android:text="pass"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhiteOverlay"
                 android:textSize="16sp"/>
