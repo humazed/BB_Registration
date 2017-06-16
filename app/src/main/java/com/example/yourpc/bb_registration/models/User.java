@@ -21,5 +21,15 @@ public class User extends RealmObject {
     @SerializedName("fcm_registration_token")
     public String fcmRegistrationToken;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", bloodType='" + bloodType + '\'' +
+                ", fcmRegistrationToken='" + fcmRegistrationToken + '\'' +
+                "} " + super.toString();
+    }
 }
 
