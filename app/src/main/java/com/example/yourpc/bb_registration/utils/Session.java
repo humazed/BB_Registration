@@ -48,7 +48,6 @@ public class Session {
     }
 
 
-
     public void logout() {
         realm.executeTransaction(realm1 -> realm1.delete(User.class));
     }

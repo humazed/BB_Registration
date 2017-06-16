@@ -1,10 +1,13 @@
 package com.example.yourpc.bb_registration;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +49,22 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show(fm, "fragment_alert");
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
 
-
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_out:
+                Session.getInstance().logoutAndGoToLogin(this);
+                return true;
+            case R.id.about_us:
+                startActivity(new Intent(this, AboutUsActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 }
