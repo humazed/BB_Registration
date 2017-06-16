@@ -28,8 +28,9 @@ public class AboutUsActivity extends AppCompatActivity {
         * */
 
         View aboutPage = new AboutPage(this)
-                .isRTL(false)
+                .isRTL(true)
                 .setImage(R.drawable.logo_color)
+                .setDescription("put description here")
                 .addItem(new Element().setTitle("Version 1.0"))
                 .addGroup("Connect with us")
                 .addGroup("Abnaoub Samy (12-00027)")
