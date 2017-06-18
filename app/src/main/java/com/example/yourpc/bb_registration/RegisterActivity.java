@@ -80,7 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
                     User user = new User();
                     user.username = etUsername.getText().toString();
                     user.id = mEtId.getText().toString();
-                    user.bloodType = etBloodType.getText().toString();
+                    user.bloodType = etBloodType.getText().toString().toLowerCase();
                     user.password = etPassword.getText().toString();
                     user.fcmRegistrationToken = FirebaseInstanceId.getInstance().getToken();
 
