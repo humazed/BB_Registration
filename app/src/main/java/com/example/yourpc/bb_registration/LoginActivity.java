@@ -20,7 +20,6 @@ import com.example.yourpc.bb_registration.models.MainResponse;
 import com.example.yourpc.bb_registration.models.User;
 import com.example.yourpc.bb_registration.utils.Session;
 import com.example.yourpc.bb_registration.webservices.WebService;
-import com.fourhcode.forhutils.FUtilsValidation;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +27,8 @@ import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.fourhcode.forhutils.FUtilsValidation.isEmpty;
 
 public class LoginActivity extends AppCompatActivity {
     private final String TAG = "LoginActivity";
@@ -62,9 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                 this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_out_right);
                 break;
             case R.id.btn_login:
-                if (!FUtilsValidation.isEmpty(etId, getString(R.string.enter_id))
-                        && !FUtilsValidation.isEmpty(etPassword, getString(R.string.enter_password))
-                        ) {
+                if (!isEmpty(etId, getString(R.string.enter_id)) && !isEmpty(etPassword, getString(R.string.enter_password))) {
                     setLoadingMode();
                     // create new user
                     final User user = new User();

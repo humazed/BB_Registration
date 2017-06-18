@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.yourpc.bb_registration.models.MainResponse;
 import com.example.yourpc.bb_registration.models.User;
+import com.example.yourpc.bb_registration.utils.Session;
 import com.example.yourpc.bb_registration.webservices.WebService;
 import com.fourhcode.forhutils.FUtilsValidation;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -83,6 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
                     user.password = etPassword.getText().toString();
                     user.fcmRegistrationToken = FirebaseInstanceId.getInstance().getToken();
 
+                    Session.getInstance().loginUser(user);
                     // register user with retorfit
                     WebService.getInstance().getApi().registerUser(user).enqueue(new Callback<MainResponse>() {
                         @Override
