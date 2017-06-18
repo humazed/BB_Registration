@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 import static com.example.yourpc.bb_registration.fcm.MyFirebaseMessagingService.KEY_FROM_NOTIFICATION;
 
 public class MainActivity extends AppCompatActivity {
-``    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.tv_username) TextView tvUsername;
 

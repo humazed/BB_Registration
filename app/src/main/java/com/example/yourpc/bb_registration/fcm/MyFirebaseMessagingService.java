@@ -14,16 +14,16 @@ import com.example.yourpc.bb_registration.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.util.Map;
+
 /**
  * User: YourPc
  * Date: 6/14/2017
  */
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-
     private static final String TAG = "MyFirebaseMsgService";
     public static final String KEY_FROM_NOTIFICATION = "fromNotification";
-    private RemoteMessage mRemoteMessage;
 
     /**
      * Called when message is received.
@@ -33,8 +33,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     // [START receive_message]
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        mRemoteMessage = remoteMessage;
-        Log.d(TAG, "remoteMessage = " + remoteMessage);
         // [START_EXCLUDE]
         // There are two types of messages data messages and notification messages. Data messages are handled
         // here in onMessageReceived whether the app is in the foreground or background. Data messages are the type
@@ -45,10 +43,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // messages. For more see: https://firebase.google.com/docs/cloud-messaging/concept-options
         // [END_EXCLUDE]
 
-        sendNotification(remoteMessage.getFrom());
+//        sendNotification(remoteMessage.getFrom());
+        sendNotification(remoteMessage);
 
-        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
@@ -58,7 +55,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-
         }
 
     }
@@ -68,9 +64,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     /**
      * Create and show a simple notification containing the received FCM message.
      *
-     * @param messageBody FCM message body received.
+     * @param remoteMessage FCM message body received.
      */
-    private void sendNotification(String messageBody) {
+    private void sendNotification(RemoteMessage remoteMessage) {
+        Map<String, String> data = remoteMessage.getData();
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -82,8 +79,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.logo)
-                .setContentTitle("FCM Message")
-                .setContentText(messageBody)
+                .setContentTitle(data.get("title"))
+                .setContentText(data.get("body"))
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);
