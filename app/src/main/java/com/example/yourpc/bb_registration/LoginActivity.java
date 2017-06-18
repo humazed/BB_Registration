@@ -60,10 +60,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 // override default transation of activity
                 this.overridePendingTransition(R.anim.enter_from_left, R.anim.exit_out_right);
-
                 break;
             case R.id.btn_login:
-
                 if (!FUtilsValidation.isEmpty(etId, getString(R.string.enter_id))
                         && !FUtilsValidation.isEmpty(etPassword, getString(R.string.enter_password))
                         ) {
@@ -77,35 +75,37 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(@NonNull Call<MainResponse> call, @NonNull Response<MainResponse> response) {
                             // check for status value comming from server (response of login-user.php file status)
-                            if (response.body().status == 2) {
+                            if (response.body().status == 0) { //failed
                                 Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
-
-                            } else if (response.body().status == 1) {
-                                Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
-                                Session.getInstance().loginUser(user);
-                                Intent goToMain = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(goToMain);
-                                finish();
-
+                            } else if (response.body().status == 1) { // success
+                                login(response);
                             } else {
-                                Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                             }
                             setNormalMode();
                         }
 
-
                         @Override
                         public void onFailure(@NonNull Call<MainResponse> call, @NonNull Throwable t) {
-                            // print error message in logcat
                             Log.e(TAG, t.getLocalizedMessage());
+                        }
 
+                        private void login(@NonNull Response<MainResponse> response) {
+                            MainResponse body = response.body();
+
+                            Log.d(TAG, "response.body() = " + body);
+                            Toast.makeText(LoginActivity.this, body.message, Toast.LENGTH_LONG).show();
+
+                            user.fcmRegistrationToken = body.user.fcmRegistrationToken;
+                            user.bloodType = body.user.bloodType;
+
+                            Session.getInstance().loginUser(user);
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
                         }
                     });
-
-
                 }
                 break;
-
         }
     }
 

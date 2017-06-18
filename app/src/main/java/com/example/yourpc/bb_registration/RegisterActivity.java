@@ -87,15 +87,14 @@ public class RegisterActivity extends AppCompatActivity {
                     WebService.getInstance().getApi().registerUser(user).enqueue(new Callback<MainResponse>() {
                         @Override
                         public void onResponse(@NonNull Call<MainResponse> call, @NonNull Response<MainResponse> response) {
-                            if ( response.body().status == 2) {
-                                Toast.makeText(RegisterActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
+                            if (response.body().status == 0) {
+                                Toast.makeText(RegisterActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                             } else if (response.body().status == 1) {
-                                Toast.makeText(RegisterActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
-                                Intent goToMain = new Intent(RegisterActivity.this, MainActivity.class);
-                                startActivity(goToMain);
+                                Toast.makeText(RegisterActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                                 finish();
                             } else {
-                                Toast.makeText(RegisterActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                             }
                             setNormalMode();
                         }
