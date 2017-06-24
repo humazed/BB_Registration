@@ -1,6 +1,5 @@
 package com.example.yourpc.bb_registration;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -53,8 +52,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-
-
     }
 
     @OnClick({R.id.tv_already_have_account, R.id.btn_signup})
@@ -65,7 +62,6 @@ public class RegisterActivity extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 this.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_out_left);
-
                 break;
             case R.id.btn_signup:
                 if (!FUtilsValidation.isEmpty(etUsername, getString(R.string.enter_username))
@@ -85,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
                     user.fcmRegistrationToken = FirebaseInstanceId.getInstance().getToken();
 
                     Session.getInstance().loginUser(user);
-                    // register user with retorfit
+                    // register user with retrofit
                     WebService.getInstance().getApi().registerUser(user).enqueue(new Callback<MainResponse>() {
                         @Override
                         public void onResponse(@NonNull Call<MainResponse> call, @NonNull Response<MainResponse> response) {

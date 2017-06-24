@@ -1,4 +1,4 @@
-package com.example.yourpc.bb_registration;
+package com.example.yourpc.bb_registration.dialogs;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.widget.Toast;
 
+import com.example.yourpc.bb_registration.R;
 import com.example.yourpc.bb_registration.models.MainResponse;
 import com.example.yourpc.bb_registration.models.NotificationResponse;
 import com.example.yourpc.bb_registration.utils.Session;
@@ -42,22 +42,8 @@ public class NotificationDialogFragment extends DialogFragment {
                 .setTitle(title)
                 .setMessage("Donate please!")
                 .setPositiveButton("Donate", (dialog, which) -> {
-                    Toast.makeText(getActivity(), "Thank you for you donation", Toast.LENGTH_LONG).show();
-
-                    NotificationResponse response = new NotificationResponse();
-                    response.response = "accepted";
-                    response.id = Session.getInstance().getUserId();
-                    WebService.getInstance().getApi().sendResponse(response).enqueue(new Callback<MainResponse>() {
-                        @Override
-                        public void onResponse(@NonNull Call<MainResponse> call, @NonNull Response<MainResponse> response) {
-                            Log.d(TAG, "onResponse " + response.body());
-                        }
-
-                        @Override
-                        public void onFailure(@NonNull Call<MainResponse> call, @NonNull Throwable t) {
-                            Log.e(TAG, "onFailure: ", t);
-                        }
-                    });
+                    Log.d(TAG, "onCreateDialog " + "Postive");
+                    showAlertDialog();
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     if (dialog != null) dialog.dismiss();
@@ -75,9 +61,12 @@ public class NotificationDialogFragment extends DialogFragment {
                             Log.e(TAG, "onFailure: ", t);
                         }
                     });
-
                 });
-
         return alertDialogBuilder.create();
+    }
+
+    private void showAlertDialog() {
+        SetTimeDialogFragment alertDialog = SetTimeDialogFragment.newInstance();
+        alertDialog.show(getActivity().getSupportFragmentManager(), "fragment_alert");
     }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/activity_login"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg"
-                tools:context="com.example.yourpc.bb_registration.LoginActivity">
+<RelativeLayout
+    android:id="@+id/activity_login"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="com.example.yourpc.bb_registration.LoginActivity">
 
     <ImageView
         android:id="@+id/img_header_logo"
@@ -65,20 +66,20 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhiteOverlay"
                 android:textSize="16sp"/>
-<!--
-            <EditText
-                android:id="@+id/et_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_email_white_24dp"
-                android:drawablePadding="8dp"
-                android:drawableStart="@drawable/ic_email_white_24dp"
-                android:hint="@string/user_email"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/colorWhite"
-                android:textColorHint="@color/colorWhiteOverlay"
-                android:textSize="16sp"/>
--->
+            <!--
+                        <EditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_email_white_24dp"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/ic_email_white_24dp"
+                            android:hint="@string/user_email"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhiteOverlay"
+                            android:textSize="16sp"/>
+            -->
 
             <EditText
                 android:id="@+id/et_blood_type"

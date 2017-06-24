@@ -14,10 +14,6 @@ public class WebService {
 
     public WebService() {
 
-//        Gson gson = new GsonBuilder()
-//                .setLenient()
-//                .create();
-
         OkHttpClient client = new OkHttpClient.Builder().build();
         Retrofit retrofit = new Retrofit.Builder().client(client)
                 .addConverterFactory(GsonConverterFactory.create())

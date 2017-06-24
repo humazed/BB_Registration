@@ -3,7 +3,6 @@ package com.example.yourpc.bb_registration;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -11,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.yourpc.bb_registration.dialogs.NotificationDialogFragment;
 import com.example.yourpc.bb_registration.models.User;
 import com.example.yourpc.bb_registration.utils.Session;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showAlertDialog() {
-        FragmentManager fm = getSupportFragmentManager();
         NotificationDialogFragment alertDialog = NotificationDialogFragment.newInstance("Donate");
-        alertDialog.show(fm, "fragment_alert");
+        alertDialog.show(getSupportFragmentManager(), "fragment_alert");
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
