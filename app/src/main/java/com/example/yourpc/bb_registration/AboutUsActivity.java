@@ -42,8 +42,6 @@ public class AboutUsActivity extends AppCompatActivity {
                 .addGroup("Sandy Fawzy (12-00049)")
                 .addYoutube("5ze_xC-y6lI")
                 .addYoutube("rolXvtMg7CI")
-                .addGitHub("humazed/BB_Registration")
-                .addWebsite("https://humazed.000webhostapp.com/")
                 .addItem(getCopyRightsElement())
                 .create();
 

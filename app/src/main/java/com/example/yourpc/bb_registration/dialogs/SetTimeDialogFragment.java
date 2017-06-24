@@ -50,30 +50,7 @@ public class SetTimeDialogFragment extends DialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_set_time_dialog, container, false);
-//        unbinder = ButterKnife.bind(this, view);
-//
-//        mOkBt.setOnClickListener(view1 -> {
-//            Toast.makeText(getActivity(), "Thank you for you donation", Toast.LENGTH_LONG).show();
-//
-//            NotificationResponse response = new NotificationResponse();
-//            response.response = "accepted";
-//            response.id = Session.getInstance().getUserId();
-//
-//            WebService.getInstance().getApi().sendResponse(response).enqueue(new Callback<MainResponse>() {
-//                @Override
-//                public void onResponse(@NonNull Call<MainResponse> call, @NonNull Response<MainResponse> response) {
-//                    Log.d(TAG, "onResponse " + response.body());
-//                }
-//
-//                @Override
-//                public void onFailure(@NonNull Call<MainResponse> call, @NonNull Throwable t) {
-//                    Log.e(TAG, "onFailure: ", t);
-//                }
-//            });
-//        });
-
-        return view;
+        return inflater.inflate(R.layout.fragment_set_time_dialog, container, false);
     }
 
     @Override
@@ -82,7 +59,6 @@ public class SetTimeDialogFragment extends DialogFragment {
         unbinder = ButterKnife.bind(this, view);
 
         getDialog().setTitle("Set donation time");
-
 
         mOkBt.setOnClickListener(view1 -> {
             Toast.makeText(getActivity(), "Thank you for you donation", Toast.LENGTH_LONG).show();
